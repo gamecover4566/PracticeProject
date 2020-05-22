@@ -9,15 +9,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.itwill.boottest.mapper.HelloMapper;
 
+@SuppressWarnings("unused")
 @Controller
 public class helloController {
-	@Autowired
-	private HelloMapper helloMapper;
+	//@Autowired
+	//private HelloMapper helloMapper;
 	
 	@RequestMapping("/hello")
 	public String hello(HttpServletRequest request, HttpServletResponse response) {
-		Integer memberCount = helloMapper.memberCount();
-		request.setAttribute("memberCount", memberCount);
+		//Integer memberCount = helloMapper.memberCount();
+		//request.setAttribute("memberCount", memberCount);
 		
 		return "hello";
 	}
