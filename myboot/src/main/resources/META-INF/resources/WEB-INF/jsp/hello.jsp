@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -47,6 +48,10 @@ document.addEventListener("DOMContentLoaded", function() {
 	});
 });
 
+function logout() {
+	document.logout.action = "logout";
+	document.logout.submit();
+}
 
 </script>
 </head>
@@ -58,5 +63,10 @@ document.addEventListener("DOMContentLoaded", function() {
 <div>썸네일 이미지 : <img id="kakaoThumbnailImg" src=""/></div>
 <br/>
 <a id="kakao-login-btn"></a>
+<c:if test="${not empty sessionScope}">
+	<form id="logout">
+		<input type="button" value="로그아웃" onclick="logout()"/>
+	</form>
+</c:if>
 </body>
 </html>
